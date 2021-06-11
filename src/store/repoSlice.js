@@ -3,15 +3,13 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
 const initialRepoState = {
     items: [],
-    selected: {},
+    selected: null,
     loading: false,
-    // error: null,
 };
 
 export const fetchRepos = createAsyncThunk(
     'repo/fetchRepos',
     async (queryString) => {
-        // console.log(queryString);
         return await axios.get('https://api.github.com/search/repositories', {
             params: {q: queryString}
         });

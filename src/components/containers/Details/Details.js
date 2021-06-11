@@ -1,37 +1,36 @@
 import React, { Fragment } from 'react';
 import { useSelector } from 'react-redux';
+import { Redirect } from 'react-router';
 import { Link } from 'react-router-dom';
 
-import * as css from './Details.css';
+import './Details.css';
 
 const Details = () => {
     const repo = useSelector(state => state.repo.selected);
 
-    return(
+    return (
         <Fragment>
-            <Link to="/">Back to Search Results</Link>
-            <div className={css.card}>
-                <div className={css.header}>
-                    {/* <img 
-                        className={css.avatar}
-                        src={repo.owner.avatar_url} 
-                        alt="avatar" /> */}
-                    <div className={css.nameBlock}>
-                        <h3>{repo.full_name}</h3>
-                        <h3>{repo.created_at}</h3>
+            {!repo ? <Redirect to='/' /> :
+                <div className='detailsContainer'>
+                    <a href={repo.owner.html_url}>
+                        <div className='header'>
+                            <img 
+                                className='avatar'
+                                src={repo.owner.avatar_url} 
+                                alt='avatar' />
+                            <h2 className='name'>{repo.full_name}</h2>
+                        </div>
+                    </a>
+                    <p className='desc'>{repo.description}</p>
+                    <div className='condensed'>
+                        <p>{`Language: ${repo.language}`}</p> 
+                        <p>{`Stars: ${repo.stargazers_count}`}</p>
                     </div>
-                </div>
-                <div>
-                    <h2>{repo.stargazers_count}</h2>
-                </div>
-                <p>{repo.description}</p>
-                <div className={css.footer}>
-                    <div>{repo.language}</div>
-                    <div>
-                        <a href={repo.html_url}>View on GitHub</a>
+                    <div className='condensed'>
+                        <Link to='/'>{`<< Back`}</Link>
+                        <a href={repo.html_url} className='floatRight'>{`View Repository >>`}</a>
                     </div>
-                </div>
-            </div>
+                </div>}
         </Fragment>
     );
 };

@@ -1,16 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import * as css from './RepositoryItem.css';
+import './RepositoryItem.css';
 
 const RepositoryItem = (props) => {
     return (
         <Link
-            className={css.row}
+            className='row'
             to="/details"
             onClick={() => props.onClick(props.repo.id)}>
-            <div>{props.repo.name}</div>
-            <div>{props.repo.description}</div>
-            <div>{props.repo.language}</div>
+            <div className='nameColumn'>{props.repo.name}</div>
+            <div className='column'>{props.repo.language}</div>
+            <div className='column alignRight'>{props.repo.stargazers_count}</div>
         </Link>
     );
 };

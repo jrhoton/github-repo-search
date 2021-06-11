@@ -1,0 +1,15 @@
+.resultsContainer {
+    margin: 1.8em auto;
+    padding: 1em 1em 0.5em 1em;
+    width: 80%;
+    background-color: white;
+    border-radius: 8px;
+}
+
+.columnHeadings {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 0.5em;
+    border-bottom: solid #777 1px;
+}

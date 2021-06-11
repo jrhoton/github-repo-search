@@ -1,32 +1,33 @@
 import React from 'react';
 import { FormControl, InputLabel, Input, Select, MenuItem, Button, CircularProgress} from '@material-ui/core';
-import * as css from './Search.module.css';
+// import { makeStyles } form '@material-ui/core/styles';
 import RepositoriesList from '../RepositoriesList/RepositoriesList';
+
+import './Search.css';
+
 
 const Search = (props) => {
     return (
         <div>
             <div 
-                className={css.searchContainer}
+                className='searchContainer'
                 onKeyDown={e => {if (e.key === 'Enter') {props.search(e)}}}>
-                <FormControl>
+                <FormControl className='grow control'>
                     <InputLabel>Search Repositories</InputLabel>
                     <Input
-                        className={css.searchField}
                         name='keyword'
                         value={props.queryParams.keyword || ''}
                         onChange={e => props.updateCriteria('keyword', e.target.value)}
                         required />
                 </FormControl>
-                <FormControl>
+                <FormControl className='control'>
                     <InputLabel>Language</InputLabel>
                     <Input
-                        className={css.searchField}
                         name='language'
                         value={props.queryParams.language || ''}
                         onChange={e => props.updateCriteria('language', e.target.value)} />
                 </FormControl>
-                <FormControl style={{minWidth: 120}}>
+                <FormControl style={{minWidth: 120, }}>
                     <InputLabel>Sort By</InputLabel>
                     <Select
                         name='sort' 
@@ -36,19 +37,25 @@ const Search = (props) => {
                         <MenuItem value='stars'>Stars</MenuItem>
                     </Select>
                 </FormControl>
-                <Button 
-                    color='primary'
-                    variant='contained'
-                    onClick={e => props.search(e)}
-                    disabled={!props.allowSearch}>
-                    Search
-                </Button>
+                <div className='control'>
+                    <Button
+                        // className='control'
+                        color='primary'
+                        variant='contained'
+                        onClick={e => props.search(e)}
+                        disabled={!props.allowSearch}>
+                        Search
+                    </Button>
+                </div>
             </div>
             {props.loading ? 
                 <CircularProgress color='primary' /> :
+                null}
+            {props.results.length > 0 ? 
                 <RepositoriesList
                     results={props.results}
-                    viewDetail={props.viewDetail} />}
+                    viewDetail={props.viewDetail} /> :
+                null}
         </div>
     );
 };
