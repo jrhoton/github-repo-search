@@ -1,5 +1,5 @@
 import React from 'react';
-import { FormControl, InputLabel, Input, Select, MenuItem, Button, CircularProgress} from '@material-ui/core';
+import { FormControl, InputLabel, Input, Select, MenuItem, Button} from '@material-ui/core';
 // import { makeStyles } form '@material-ui/core/styles';
 import RepositoriesList from '../RepositoriesList/RepositoriesList';
 
@@ -48,11 +48,9 @@ const Search = (props) => {
                     </Button>
                 </div>
             </div>
-            {props.loading ? 
-                <CircularProgress color='primary' /> :
-                null}
-            {props.results.length > 0 ? 
+            {props.loading || props.results.length > 0 ? 
                 <RepositoriesList
+                    loading={props.loading}
                     results={props.results}
                     viewDetail={props.viewDetail} /> :
                 null}

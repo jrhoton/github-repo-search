@@ -1,4 +1,5 @@
 import React from 'react';
+import { CircularProgress } from '@material-ui/core';
 import RepositoryItem from '../RepositoryItem/RepositoryItem';
 import './RepositoriesList.css';
 
@@ -15,6 +16,13 @@ const RepositoriesList = (props) => {
                 <div className='column'>Language</div>
                 <div className='column alignRight'>Stars</div>
             </div>
+            {props.loading ? 
+                <CircularProgress
+                    style={{ marginLeft: '50%' }}
+                    size={40}
+                    left={-20}
+                    top={30} /> :
+                null}
             {list}
         </div>
     );

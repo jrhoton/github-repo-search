@@ -26,18 +26,16 @@ export const repoSlice = createSlice({
     },
     extraReducers: {
         [fetchRepos.pending]: (state) => {
+            state.items = [];
             state.loading = true;
-            // state.error = null;
         },
         [fetchRepos.fulfilled]: (state, action) => {
             state.items = [...action.payload.data.items];
             state.loading = false;
-            // state.error = null;
         },
         [fetchRepos.rejected]: (state, action) => {
             state.items = [];
             state.loading = false;
-            // state.error = action.payload.error;
         },
     },
 });
