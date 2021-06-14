@@ -3,12 +3,12 @@
 A simple repository search application written in JavaScript and using the [GitHub Repository Search API](https://docs.github.com/en/rest/reference/search#search-repositories).
 
 The project was created with the help of Create React App and uses the following libraries:
-    - [React](https://reactjs.org/)
-    - [React Router](https://reactrouter.com/)
-    - [Redux Toolkit](https://redux-toolkit.js.org/)
-    - [Axios](https://axios-http.com/)
-    - [Material-UI](https://material-ui.com/)
-    - [Testing Library](https://testing-library.com/)
+    - [React](https://reactjs.org/)\
+    - [React Router](https://reactrouter.com/)\
+    - [Redux Toolkit](https://redux-toolkit.js.org/)\
+    - [Axios](https://axios-http.com/)\
+    - [Material-UI](https://material-ui.com/)\
+    - [Testing Library](https://testing-library.com/)\
 
 ## Available Scripts
 
