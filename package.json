@@ -3,6 +3,13 @@
   "name": "github-repo-search",
   "version": "0.1.0",
   "private": true,
+  "jest": {
+    "collectCoverageFrom": [
+      "**/*.{js,jsx}",
+      "!**/node_modules/**"
+    ],
+    "coverageReporters": ["text"]
+  },
   "dependencies": {
     "@material-ui/core": "^4.11.4",
     "@reduxjs/toolkit": "^1.6.0",

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { FormControl, InputLabel, Input, Select, MenuItem, Button} from '@material-ui/core';
 // import { makeStyles } form '@material-ui/core/styles';
 import RepositoriesList from '../RepositoriesList/RepositoriesList';
@@ -8,29 +8,39 @@ import './Search.css';
 
 const Search = (props) => {
     return (
-        <div>
+        <Fragment>
             <div 
                 className='searchContainer'
+                aria-label='search controls'
                 onKeyDown={e => {if (e.key === 'Enter') {props.search(e)}}}>
-                <FormControl className='grow control'>
+                <FormControl 
+                    className='grow control'
+                    aria-label='keyword search'>
                     <InputLabel>Search Repositories</InputLabel>
                     <Input
                         name='keyword'
+                        role='text control'
                         value={props.queryParams.keyword || ''}
                         onChange={e => props.updateCriteria('keyword', e.target.value)}
                         required />
                 </FormControl>
-                <FormControl className='control'>
+                <FormControl 
+                    className='control'
+                    aria-label='language search'>
                     <InputLabel>Language</InputLabel>
                     <Input
                         name='language'
+                        role='text control'
                         value={props.queryParams.language || ''}
                         onChange={e => props.updateCriteria('language', e.target.value)} />
                 </FormControl>
-                <FormControl style={{minWidth: 120, }}>
+                <FormControl 
+                    aria-label='sort by'
+                    style={{minWidth: 120, }}>
                     <InputLabel>Sort By</InputLabel>
                     <Select
                         name='sort' 
+                        role='select control'
                         value={props.queryParams.sort || ''}
                         onChange={e => props.updateCriteria('sort', e.target.value)}>
                         <MenuItem value=''>Best Match</MenuItem>
@@ -39,7 +49,8 @@ const Search = (props) => {
                 </FormControl>
                 <div className='control'>
                     <Button
-                        // className='control'
+                        aria-label='search button'
+                        role='button'
                         color='primary'
                         variant='contained'
                         onClick={e => props.search(e)}
@@ -48,13 +59,13 @@ const Search = (props) => {
                     </Button>
                 </div>
             </div>
-            {props.loading || props.results.length > 0 ? 
+            {props.loading || props.results ? 
                 <RepositoriesList
                     loading={props.loading}
                     results={props.results}
                     viewDetail={props.viewDetail} /> :
                 null}
-        </div>
+        </Fragment>
     );
 };
 

@@ -5,6 +5,8 @@ import './RepositoryItem.css';
 const RepositoryItem = (props) => {
     return (
         <Link
+            role='result link'
+            aria-label='repository item'
             className='row'
             to="/details"
             onClick={() => props.onClick(props.repo.id)}>

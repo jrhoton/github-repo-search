@@ -10,7 +10,9 @@ const RepositoriesList = (props) => {
     }
 
     return(
-        <div className='resultsContainer'>
+        <div 
+            className='resultsContainer'
+            aria-label='results list'>
             <div className='columnHeadings'>
                 <div className='nameColumn'>Repository Name</div>
                 <div className='column'>Language</div>
@@ -18,6 +20,7 @@ const RepositoriesList = (props) => {
             </div>
             {props.loading ? 
                 <CircularProgress
+                    aria-label='loading results'
                     style={{ marginLeft: '50%' }}
                     size={40}
                     left={-20}

@@ -2,7 +2,7 @@ import axios from 'axios';
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
 const initialRepoState = {
-    items: [],
+    items: null,
     selected: null,
     loading: false,
 };
@@ -33,7 +33,7 @@ export const repoSlice = createSlice({
             state.items = [...action.payload.data.items];
             state.loading = false;
         },
-        [fetchRepos.rejected]: (state, action) => {
+        [fetchRepos.rejected]: (state) => {
             state.items = [];
             state.loading = false;
         },
