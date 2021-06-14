@@ -10,7 +10,7 @@ const Search = (props) => {
     return (
         <Fragment>
             <div 
-                className='searchContainer'
+                className='searchControls'
                 aria-label='search controls'
                 onKeyDown={e => {if (e.key === 'Enter') {props.search(e)}}}>
                 <FormControl 

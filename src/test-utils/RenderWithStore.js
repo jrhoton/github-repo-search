@@ -1,12 +1,11 @@
-import { Provider } from 'react-redux';
-import { store } from '../store/store';
+import { BrowserRouter } from 'react-router-dom';
 
-const ReduxProvider = (children) => {
+const RenderWithBrowserRouter = (children) => {
     return (
-        <Provider store={store}>
+        <BrowserRouter>
             {children}
-        </Provider>
+        </BrowserRouter>
     );
 };
 
-export default ReduxProvider;
+export default RenderWithBrowserRouter;
