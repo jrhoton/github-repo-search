@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/github-repo-search/static/css/main.5da5934a.chunk.css",
-    "main.js": "/github-repo-search/static/js/main.265a9b73.chunk.js",
-    "main.js.map": "/github-repo-search/static/js/main.265a9b73.chunk.js.map",
+    "main.css": "/github-repo-search/static/css/main.f83b4376.chunk.css",
+    "main.js": "/github-repo-search/static/js/main.52ac3bfd.chunk.js",
+    "main.js.map": "/github-repo-search/static/js/main.52ac3bfd.chunk.js.map",
     "runtime-main.js": "/github-repo-search/static/js/runtime-main.aa6bf5de.js",
     "runtime-main.js.map": "/github-repo-search/static/js/runtime-main.aa6bf5de.js.map",
-    "static/js/2.cda51f54.chunk.js": "/github-repo-search/static/js/2.cda51f54.chunk.js",
-    "static/js/2.cda51f54.chunk.js.map": "/github-repo-search/static/js/2.cda51f54.chunk.js.map",
+    "static/js/2.c2cb8f3d.chunk.js": "/github-repo-search/static/js/2.c2cb8f3d.chunk.js",
+    "static/js/2.c2cb8f3d.chunk.js.map": "/github-repo-search/static/js/2.c2cb8f3d.chunk.js.map",
     "index.html": "/github-repo-search/index.html",
-    "static/css/main.5da5934a.chunk.css.map": "/github-repo-search/static/css/main.5da5934a.chunk.css.map",
-    "static/js/2.cda51f54.chunk.js.LICENSE.txt": "/github-repo-search/static/js/2.cda51f54.chunk.js.LICENSE.txt"
+    "static/css/main.f83b4376.chunk.css.map": "/github-repo-search/static/css/main.f83b4376.chunk.css.map",
+    "static/js/2.c2cb8f3d.chunk.js.LICENSE.txt": "/github-repo-search/static/js/2.c2cb8f3d.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.aa6bf5de.js",
-    "static/js/2.cda51f54.chunk.js",
-    "static/css/main.5da5934a.chunk.css",
-    "static/js/main.265a9b73.chunk.js"
+    "static/js/2.c2cb8f3d.chunk.js",
+    "static/css/main.f83b4376.chunk.css",
+    "static/js/main.52ac3bfd.chunk.js"
   ]
 }
