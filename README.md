@@ -8,7 +8,7 @@ The project was created with the help of Create React App and uses the following
     - [Redux Toolkit](https://redux-toolkit.js.org/)\
     - [Axios](https://axios-http.com/)\
     - [Material-UI](https://material-ui.com/)\
-    - [Testing Library](https://testing-library.com/)\
+    - [Testing Library](https://testing-library.com/)
 
 ## Available Scripts
 
