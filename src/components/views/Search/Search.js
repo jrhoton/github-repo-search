@@ -1,11 +1,15 @@
 import React, { Fragment } from 'react';
 import { FormControl, InputLabel, Input, Select, MenuItem, Button} from '@material-ui/core';
-// import { makeStyles } form '@material-ui/core/styles';
 import RepositoriesList from '../RepositoriesList/RepositoriesList';
-
 import './Search.css';
 
-
+/**
+ * Search View
+ * 
+ * This component contains the search controls and renders the Repositories List once a request has been
+ * made to the GitHub API.
+ * @props queryParams, updateCriteria(), allowSearch, search(), loading, results, viewDetail()
+ */
 const Search = (props) => {
     return (
         <Fragment>

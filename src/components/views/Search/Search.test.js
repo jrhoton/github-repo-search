@@ -1,7 +1,6 @@
 import React from 'react';
-import { screen, render, fireEvent, within } from '@testing-library/react';
+import { screen, render, fireEvent } from '@testing-library/react';
 import Search from './Search';
-import userEvent from '@testing-library/user-event';
 
 describe('SearchView', () => {
     const testProps = {

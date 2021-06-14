@@ -2,9 +2,14 @@ import React, { Fragment } from 'react';
 import { useSelector } from 'react-redux';
 import { Redirect } from 'react-router';
 import { Link } from 'react-router-dom';
-
 import './Details.css';
 
+/**
+ * Details Container
+ * 
+ * This is the base component for the '/details' route. It displays the selected repository in greater detail.
+ * If no repository has been selected, redirect to '/'.
+ */
 const Details = () => {
     const repo = useSelector(state => state.repo.selected);
 

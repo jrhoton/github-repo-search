@@ -3,10 +3,17 @@ import { CircularProgress } from '@material-ui/core';
 import RepositoryItem from '../RepositoryItem/RepositoryItem';
 import './RepositoriesList.css';
 
+/**
+ * RepositoriesList View
+ * 
+ * This component displays a progress indicator while loading after a request has been made to the GitHub API.
+ * If the request is successful, results are mapped to individual RepositoryItem View components.
+ * @props loading, results, viewDetail()
+ */
 const RepositoriesList = (props) => {
     let list = null
     if (props.results) {
-        list = props.results.map(repo => <RepositoryItem key={repo.id} repo={repo} onClick={() => props.viewDetail(repo.id)} />);
+        list = props.results.map(repo => <RepositoryItem key={repo.id} repo={repo} selectRepo={() => props.viewDetail(repo.id)} />);
     }
 
     return(

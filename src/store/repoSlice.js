@@ -5,6 +5,7 @@ const initialRepoState = {
     items: null,
     selected: null,
     loading: false,
+    error: null
 };
 
 export const fetchRepos = createAsyncThunk(
@@ -28,14 +29,16 @@ export const repoSlice = createSlice({
         [fetchRepos.pending]: (state) => {
             state.items = [];
             state.loading = true;
+            state.error = null;
         },
         [fetchRepos.fulfilled]: (state, action) => {
             state.items = [...action.payload.data.items];
             state.loading = false;
         },
-        [fetchRepos.rejected]: (state) => {
+        [fetchRepos.rejected]: (state, action) => {
             state.items = [];
             state.loading = false;
+            state.error = action.error;
         },
     },
 });
