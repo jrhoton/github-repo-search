@@ -4,7 +4,6 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import ErrorModal from './views/ErrorModal/ErrorModal';
 import Search from './containers/Search/Search';
 import Details from './containers/Details/Details';
-import './App.css';
 
 const App = () => {
   const error = useSelector(state => state.repo.error);
