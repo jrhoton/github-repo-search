@@ -16,7 +16,7 @@ const RepositoryItem = (props) => {
             aria-label='repository item'
             className='row'
             to="/details"
-            selectRepo={() => props.onClick(props.repo.id)}>
+            onClick={() => props.selectRepo(props.repo.id)}>
             <div className='nameColumn'>{props.repo.name}</div>
             <div className='column'>{props.repo.language}</div>
             <div className='column alignRight'>{props.repo.stargazers_count}</div>
